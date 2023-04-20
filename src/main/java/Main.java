@@ -35,13 +35,13 @@ public class Main {
         HtmlTable table = (HtmlTable) sizingGuidePage.getByXPath("//table").get(1);
         List<Shoe> shoes = table.getBodies().get(0).getRows().stream()
                 .map(row -> new Shoe(
-                        row.getCell(0).getTextContent(),
-                        row.getCell(1).getTextContent(),
-                        row.getCell(2).getTextContent(),
-                        row.getCell(3).getTextContent(),
-                        row.getCell(4).getTextContent(),
-                        row.getCell(5).getTextContent(),
-                        row.getCell(6).getTextContent()
+                        row.getCell(0).getTextContent().trim(),
+                        row.getCell(1).getTextContent().trim(),
+                        row.getCell(2).getTextContent().trim(),
+                        row.getCell(3).getTextContent().trim(),
+                        row.getCell(4).getTextContent().trim(),
+                        row.getCell(5).getTextContent().trim(),
+                        row.getCell(6).getTextContent().trim()
                 )).collect(Collectors.toList());
         return shoes;
     }
