@@ -77,14 +77,13 @@ public class Shoe {
 
     @Override
     public String toString() {
-        return "Shoe{" +
-                "rockShoeModel='" + rockShoeModel + '\'' +
-                ", technicalFit='" + technicalFit + '\'' +
-                ", semiTechnicalFit='" + semiTechnicalFit + '\'' +
-                ", traditionalFit='" + traditionalFit + '\'' +
-                ", entryLevelFit='" + entryLevelFit + '\'' +
-                ", footVolume='" + footVolume + '\'' +
-                ", footType='" + footType + '\'' +
-                '}';
+        return
+                "Shoe model: " + rockShoeModel +
+                ", Technical Fit: " + technicalFit +
+                ", Semi-Technical Fit: " + semiTechnicalFit +
+                ", Traditional Fit: " + traditionalFit +
+                ", Entry Level Fit: " + entryLevelFit +
+                ", Foot Volume: " + footVolume +
+                ", Foot Type: " + footType;
     }
 }
