@@ -18,13 +18,13 @@ public class Main {
         List<Shoe> shoes = parseGuideData(sizingGuidePage);
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter your foot volume (High, Mid, Low): ");
+        System.out.println("Enter your foot volume (High, Medium, Low): ");
         String footVolume = scanner.nextLine();
         System.out.println("Enter your foot type (Classic, Square, Centre): ");
         String footType = scanner.nextLine();
 
         for (Shoe shoe : shoes) {
-            if (shoe.getFootVolume().toLowerCase().equalsIgnoreCase(footVolume) && shoe.getFootType().toLowerCase().equalsIgnoreCase(footType)) {
+            if (shoe.getFootVolume().toLowerCase().contains(footVolume) && shoe.getFootType().toLowerCase().equalsIgnoreCase(footType)) {
                 System.out.println(shoe);
             }
         }
