@@ -1,7 +1,12 @@
+package data;
+
+import biz.model.Shoe;
+
 import java.util.List;
 
 public class ShoeRepository {
-    private List<Shoe> shoes;
+    DataScrape dataScrape = new DataScrape();
+    List<Shoe> shoes = dataScrape.parseGuideData();
 
     public List<Shoe> getShoes() {
         return shoes;

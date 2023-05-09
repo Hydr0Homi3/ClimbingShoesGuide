@@ -1,3 +1,6 @@
+package data;
+
+import biz.model.Shoe;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import com.gargoylesoftware.htmlunit.html.HtmlTable;
@@ -6,21 +9,23 @@ import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
-//separate class for HTMLUnit scrape as it needs main method not to blow up and I don't want it in my main lmfao
 public class DataScrape {
+    private WebClient webClient = new WebClient();
+    private HtmlPage sizingGuidePage;
 
-    WebClient webClient = new WebClient();
-    HtmlPage sizingGuidePage;
-
-    public DataScrape() throws IOException {
+    public DataScrape() {
         String url = "https://rockrun.com/blogs/the-flash-rock-run-blog/rock-climbing-shoe-sizing-guide";
         sizingGuidePage = getWebPage(url);
     }
 
-    public HtmlPage getWebPage(String url) throws IOException {
+    public HtmlPage getWebPage(String url) {
         webClient.getOptions().setJavaScriptEnabled(false);
         webClient.getOptions().setCssEnabled(false);
-        return webClient.getPage(url);
+        try {
+            return webClient.getPage(url);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 
@@ -37,9 +42,5 @@ public class DataScrape {
                         row.getCell(6).getTextContent().trim()
                 )).collect(Collectors.toList());
         return shoes;
-    }
-
-    public static void main(String[] args) throws IOException {
-
     }
 }

@@ -1,3 +1,5 @@
+package biz.model;
+
 public class Shoe {
 
     private String rockShoeModel;
