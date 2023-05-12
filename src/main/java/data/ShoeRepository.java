@@ -11,17 +11,6 @@ public class ShoeRepository {
     public List<Shoe> getShoes() {
         return shoes;
     }
-    public void addShoe(Shoe shoe) {
-        shoes.add(shoe);
-    }
-
-    public void deleteShoe(int index) {
-        shoes.remove(shoes.remove(index));
-    }
-
-    public void deleteAllShoes() {
-        shoes.clear();
-    }
 
     public void showAllShoes() {
         if (shoes.size() > 0) {

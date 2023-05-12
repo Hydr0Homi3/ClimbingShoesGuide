@@ -1,6 +1,8 @@
 package biz;
 
 import biz.model.Shoe;
+import biz.website_search.Check8a;
+import biz.website_search.CheckPolarsport;
 import data.ShoeRepository;
 
 import java.util.List;
@@ -9,21 +11,13 @@ public class ShoeService {
 
     private ShoeRepository shoeRepository = new ShoeRepository();
 
+    private Check8a check8a = new Check8a();
+
+    private CheckPolarsport checkPolarsport = new CheckPolarsport();
+
 
     public List<Shoe> getShoes() {
         return shoeRepository.getShoes();
-    }
-
-    public void addShoe(Shoe shoe) {
-        shoeRepository.addShoe(shoe);
-    }
-
-    public void deleteShoe(int index) {
-        shoeRepository.deleteShoe(index);
-    }
-
-    public void deleteAllShoes() {
-        shoeRepository.deleteAllShoes();
     }
 
     public void showAllShoes() {
@@ -36,5 +30,13 @@ public class ShoeService {
                 System.out.println(shoe);
             }
         }
+    }
+
+    public void checkShoeOn8A (String brandName, String model, double size) {
+        check8a.checkShoesOn8A(brandName, model, size);
+    }
+
+    public void checkShoesOnPolarsport(String brandName, String model, double size) {
+        checkPolarsport.checkShoesOnPolarsport(brandName, model, size);
     }
 }

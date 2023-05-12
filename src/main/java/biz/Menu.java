@@ -18,12 +18,11 @@ public class Menu {
         while (!exit) {
             System.out.println("Climbing shoe size guide - Menu.");
             System.out.println("Please choose an option:");
-            System.out.println("1. Add a new shoe");
-            System.out.println("2. Delete a shoe");
-            System.out.println("3. Show all shoes");
-            System.out.println("4. Delete all shoes");
-            System.out.println("5. Find me a shoe");
-            System.out.println("6. Exit");
+            System.out.println("1. Find me a shoe");
+            System.out.println("2. Check 8a.pl for a shoe");
+            System.out.println("3. Check polarsport.pl for a shoe");
+            System.out.println("4. Show all shoes");
+            System.out.println("5. Exit");
 
             try {
                 int choice = scanner.nextInt();
@@ -31,26 +30,6 @@ public class Menu {
 
                 switch (choice) {
                     case 1 -> {
-                        System.out.println("Add a new shoe:");
-
-                        System.out.println("New shoe added successfully.");
-                    }
-                    case 2 -> {
-                        shoeService.showAllShoes();
-                        System.out.println("Enter the shoe number to delete:");
-                        int index = scanner.nextInt() - 1;
-                        shoeService.deleteShoe(index);
-                        System.out.println("Shoe deleted successfully.");
-                    }
-                    case 3 -> {
-                        shoeService.showAllShoes();
-                        System.out.println("All tasks shown successfully.");
-                    }
-                    case 4 -> {
-                        shoeService.deleteAllShoes();
-                        System.out.println("All shoes deleted successfully.");
-                    }
-                    case 5 -> {
                         System.out.println("Enter your foot volume (High, Medium, Low): ");
                         String footVolume = scanner.nextLine();
                         System.out.println("Enter your foot type (Classic, Square, Centre): ");
@@ -58,7 +37,31 @@ public class Menu {
                         shoeService.findAShoe(footVolume, footType);
                         System.out.println("Here are all shoes that will fit your expectations.");
                     }
-                    case 6 -> {
+                    case 2 -> {
+                        System.out.println("Enter the brand name (La Sportiva / Scarpa): ");
+                        String brandName = scanner.nextLine();
+                        System.out.println("Enter the model name (Instinct VSR / Theory): ");
+                        String model = scanner.nextLine();
+                        System.out.println("Enter the size you're looking for: ");
+                        double size = scanner.nextDouble();
+                        shoeService.checkShoeOn8A(brandName, model, size);
+                        System.out.println("Here are all shoes that will fit your expectations.");
+                    }
+                    case 3 -> {
+                        System.out.println("Enter the brand name (La Sportiva / Scarpa): ");
+                        String brandName = scanner.nextLine();
+                        System.out.println("Enter the model name (Instinct VSR / Theory): ");
+                        String model = scanner.nextLine();
+                        System.out.println("Enter the size you're looking for: ");
+                        double size = scanner.nextDouble();
+                        shoeService.checkShoesOnPolarsport(brandName, model, size);
+                        System.out.println("Here are all shoes that will fit your expectations.");
+                    }
+                    case 4 -> {
+                        shoeService.showAllShoes();
+                        System.out.println("All tasks shown successfully.");
+                    }
+                    case 5 -> {
                         exit = true;
                         System.out.println("Exiting program...");
                     }
