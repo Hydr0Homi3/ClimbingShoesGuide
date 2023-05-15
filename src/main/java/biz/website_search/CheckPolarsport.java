@@ -17,5 +17,6 @@ public class CheckPolarsport {
         driver.manage().window().maximize();
         driver.get("https://www.polarsport.pl/");
         driver.findElement(By.id("search")).sendKeys(brandName + " " + model + Keys.ENTER);
+        driver.findElement(By.xpath("//a[contains(text(), '" + brandName.toUpperCase() + " " + model.toUpperCase() + "')]")).click();
     }
 }

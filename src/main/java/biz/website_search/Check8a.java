@@ -18,6 +18,8 @@ public class Check8a{
         driver.get("https://8a.pl/");
         driver.findElement(By.xpath("//button[contains(text(),'Zgoda')]")).click();
         driver.findElement(By.id("search")).sendKeys(brandName + " " + model + Keys.ENTER);
+        driver.findElement(By.xpath("//a[contains(text(), '" + brandName + " " + model + "')]")).click();
+        driver.findElement(By.xpath("//a[contains(text(), '" + brandName + " " + model + "')]")).click();
     }
 }
 

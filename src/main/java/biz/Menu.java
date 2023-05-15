@@ -1,14 +1,11 @@
 package biz;
 
-import biz.model.Shoe;
-
 import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
     private ShoeService shoeService = new ShoeService();
-    private List<Shoe> shoes = shoeService.getShoes();
+
     private Scanner scanner = new Scanner(System.in);
 
     public void run() {
