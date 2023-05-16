@@ -40,9 +40,8 @@ public class Menu {
                         System.out.println("Enter the model name (Instinct VSR / Theory): ");
                         String model = scanner.nextLine();
                         System.out.println("Enter the size you're looking for: ");
-                        double size = scanner.nextDouble();
+                        String size = scanner.nextLine();
                         shoeService.checkShoeOn8A(brandName, model, size);
-                        System.out.println("Here are all shoes that will fit your expectations.");
                     }
                     case 3 -> {
                         System.out.println("Enter the brand name (La Sportiva / Scarpa): ");
@@ -50,9 +49,8 @@ public class Menu {
                         System.out.println("Enter the model name (Instinct VSR / Theory): ");
                         String model = scanner.nextLine();
                         System.out.println("Enter the size you're looking for: ");
-                        double size = scanner.nextDouble();
+                        String size = scanner.nextLine();
                         shoeService.checkShoesOnPolarsport(brandName, model, size);
-                        System.out.println("Here are all shoes that will fit your expectations.");
                     }
                     case 4 -> {
                         shoeService.showAllShoes();

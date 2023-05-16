@@ -32,11 +32,11 @@ public class ShoeService {
         }
     }
 
-    public void checkShoeOn8A (String brandName, String model, double size) {
+    public void checkShoeOn8A (String brandName, String model, String size) {
         check8a.checkShoesOn8A(brandName, model, size);
     }
 
-    public void checkShoesOnPolarsport(String brandName, String model, double size) {
+    public void checkShoesOnPolarsport(String brandName, String model, String size) {
         checkPolarsport.checkShoesOnPolarsport(brandName, model, size);
     }
 }
